@@ -47,7 +47,7 @@ const schedule = [
   },
   {
     date: 'Break',
-    dateTime: '2024-25-01',
+    dateTime: '2024-26-01',
     summary:
    null,
     timeSlots: [
