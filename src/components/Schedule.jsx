@@ -53,7 +53,7 @@ const schedule = [
     timeSlots: [
       {
         name: 'Break',
-         link: 'https://',
+         link: '#',
         description: 'Time for some snacks and refreshments',
         start: '1:00PM',
         end: '1:15PM',
@@ -186,11 +186,12 @@ function TimeSlots({ day, className }) {
       )}
     >
       {day.timeSlots.map((timeSlot, timeSlotIndex) => (
-        <li
+         <Link href={timeSlot.link} target='_blank'>
+       <li
           key={timeSlot.start}
           aria-label={`${timeSlot.name} talking about ${timeSlot.description} at ${timeSlot.start} - ${timeSlot.end} EST`}
         >
-  <Link href={timeSlot.link} target='_blank'>
+
           {timeSlotIndex > 0 && (
             <div className="mx-auto mb-8 h-px w-48 bg-indigo-500/10" />
           )}
@@ -213,8 +214,9 @@ function TimeSlots({ day, className }) {
             </time>{' '}
             EST
           </p>
-          </Link>
+         
         </li>
+         </Link>
       ))}
     </ol>
   )
